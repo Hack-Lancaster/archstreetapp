@@ -41,13 +41,19 @@ assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:        [ ]
-    #java: /usr/bin/java
+    sass:           "%kernel.root_dir%/../.gems/bin/sass"
     filters:
         cssrewrite: ~
-        #closure:
-        #    jar: "%kernel.root_dir%/Resources/java/compiler.jar"
-        #yui_css:
-        #    jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.7.jar"
+        sass:
+            bin: "%kernel.root_dir%/../.gems/bin/sass"
+            apply_to: "\.scss$"
+
+braincrafted_bootstrap:
+    less_filter: sass
+    jquery_path: %kernel.root_dir%/../vendor/components/jquery/jquery.js
+    customize:
+        variables_file: "%kernel.root_dir%/Resources/sass/_bootstrap-variables.scss"
+        bootstrap_output: "%kernel.root_dir%/Resources/sass/styles.scss"
 
 # Doctrine Configuration
 doctrine:
@@ -78,3 +84,8 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: Archstreet\Bundle\AppBundle\Entity\User

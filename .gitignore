@@ -11,3 +11,7 @@
 /bin/
 /composer.phar
 .idea
+.gems
+web/css
+web/js
+web/fonts

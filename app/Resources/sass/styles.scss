@@ -1,0 +1,12 @@
+// Import custom Bootstrap variables
+@import "bootstrap-variables";
+
+// Import Bootstrap for Sass
+@import "../../../vendor/twbs/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// ONLY RE-USABLE STYLES, MIXINS, AND VARS SHOULD BE IN THIS FILE
+// App styles are in src/Archstreet/Bundle/AppBundle/Resources/sass
+
+
+// Finally, import app styles
+@import "../../../src/Archstreet/Bundle/AppBundle/Resources/sass/appstyles";
