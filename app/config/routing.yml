@@ -1,0 +1,4 @@
+archstreet_app:
+    resource: "@ArchstreetAppBundle/Controller/"
+    type:     annotation
+    prefix:   /
